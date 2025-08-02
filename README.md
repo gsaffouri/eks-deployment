@@ -40,7 +40,7 @@ It pulls core networking resources (VPC, subnets, remote state config) from the 
 
 ---
 
-📦 Dependencies
+## 📦 Dependencies
 Terraform >= 1.3.0
 
 AWS CLI authenticated with correct IAM role
@@ -49,7 +49,7 @@ Remote state from aws-bootstrap
 
 ---
 
-🔮 To Do
+## 🔮 To Do
  Add GitHub Actions for EKS deploy
 
  Add IRSA support
@@ -60,17 +60,17 @@ Remote state from aws-bootstrap
 
 ---
 
- 🤝 Contributing
+## 🤝 Contributing
 Pull requests are welcome. Fork it. Work it. PR it. Repeat.
 
 ---
 
-🧠 Credits
+## 🧠 Credits
 Built by GSaffouri_X 🦍, powered by coffee and cloud infrastructure!
 
 ---
 
-📜 License
+## 📜 License
 This project is licensed under the MIT License — see the LICENSE file for details.
 
 ---
