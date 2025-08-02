@@ -15,13 +15,3 @@ provider "aws" {
   region = "us-east-1" 
 }
 
-data "terraform_remote_state" "bootstrap" {
-  backend = "s3"
-
-  config = {
-    bucket = "your-bootstrap-tf-state-bucket-name"
-    key    = "tf-bootstrap/terraform.tfstate"
-    region = "us-east-1"
-  }
-}
-
