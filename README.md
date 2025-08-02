@@ -32,3 +32,43 @@ It pulls core networking resources (VPC, subnets, remote state config) from the 
 
 ## 📂 Folder Structure
 
+.
+├── main.tf
+├── outputs.tf
+├── lint.yml
+└── README.md
+
+📦 Dependencies
+Terraform >= 1.3.0
+
+AWS CLI authenticated with correct IAM role
+
+Remote state from aws-bootstrap
+
+🔮 To Do
+ Add GitHub Actions for EKS deploy
+
+ Add IRSA support
+
+ Add Helm support for post-cluster apps
+
+ Document terraform_remote_state usage in detail
+
+ 🤝 Contributing
+Pull requests are welcome. Fork it. Work it. PR it. Repeat.
+
+🧠 Credits
+Built by GSaffouri_X 🦍, powered by coffee and cloud infrastructure!
+
+📜 License
+This project is licensed under the MIT License — see the LICENSE file for details.
+
+sql
+Copy
+Edit
+
+---
+
+✅ Triple backticks all closed  
+✅ Markdown blocks are tight  
+✅ You can now copy every section without VS Code or GitHub Markdown freaking out
