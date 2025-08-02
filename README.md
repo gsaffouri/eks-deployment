@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/gsaffouri/eks-deploy/actions">
-    <img src="https://github.com/gsaffouri/eks-deploy/actions/workflows/lint.yml/badge.svg?branch=main&label=CI%2FCD&logo=githubactions&style=flat-square" alt="CI/CD">
+    <img src="[![CI/CD](https://github.com/gsaffouri/eks-deploy/actions/workflows/lint.yml/badge.svg?branch=main&label=CI%2FCD)](https://github.com/gsaffouri/eks-deploy/actions)" alt="CI/CD">
   </a>
   <img src="https://img.shields.io/badge/Terraform-1.5%2B-blueviolet?logo=terraform&style=flat-square" alt="Terraform Version">
   <img src="https://img.shields.io/badge/EKS%20Cluster-Managed-blue?logo=kubernetes&style=flat-square" alt="EKS Cluster">
