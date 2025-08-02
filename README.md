@@ -14,7 +14,7 @@
 
 # 🎯 EKS Deploy
 
-This repo uses Terraform to deploy a production-ready **Amazon EKS cluster** with a managed node group, leveraging the official [`terraform-aws-modules/eks/aws`](https://github.com/terraform-aws-modules/terraform-aws-eks) module.
+This repo uses Terraform to deploy a production-ready **Amazon EKS cluster** with a managed node group, leveraging the official. [`terraform-aws-modules/eks/aws`](https://github.com/terraform-aws-modules/terraform-aws-eks) module.
 
 It pulls core networking resources (VPC, subnets, remote state config) from the [aws-bootstrap](https://github.com/gsaffouri/aws-bootstrap) repo via S3 backend and `terraform_remote_state`.
 
