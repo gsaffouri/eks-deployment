@@ -1,13 +1,14 @@
 # Remote State - Get Bootstrap Outputs Automatically
 data "terraform_remote_state" "bootstrap" {
   backend = "s3"
-
   config = {
-    bucket = "my-tf-state-bucket"
-    key    = "tf-bootstrap/terraform.tfstate"
-    region = "us-east-1"
+    bucket         = "my-tf-state-bucket-08040627"
+    key            = "tf-bootstrap/terraform.tfstate"
+    region         = "us-east-1" 
+    dynamodb_table = "terraform-state-lock"
   }
 }
+
 
 # EKS Cluster Module
 module "eks" {

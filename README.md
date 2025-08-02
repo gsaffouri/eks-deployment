@@ -12,7 +12,7 @@
 
 ---
 
-# 🎯 EKS Deploy
+# 🎯 Terraform EKS Deployment 
 
 This repo uses Terraform to deploy a production-ready **Amazon EKS cluster** with a managed node group, leveraging the official. [`terraform-aws-modules/eks/aws`](https://github.com/terraform-aws-modules/terraform-aws-eks) module.
 
