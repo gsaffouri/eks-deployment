@@ -2,12 +2,12 @@
 data "terraform_remote_state" "bootstrap" {
   backend = "s3"
   config = {
-    bucket         = "my-tf-state-bucket-08040627"
-    key            = "tf-bootstrap/terraform.tfstate"
-    region         = "us-east-1" 
-    dynamodb_table = "terraform-state-lock"
+    bucket = "my-tf-state-bucket-08040627"
+    key    = "aws-bootstrap/terraform.tfstate"
+    region = "us-east-1"
   }
 }
+
 
 
 # EKS Cluster Module
