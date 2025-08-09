@@ -1,9 +1,9 @@
 <p align="center">
   <a href="https://github.com/gsaffouri/eks-deployment/actions/workflows/lint.yml">
-    <img src="https://github.com/gsaffouri/eks-deployment/actions/workflows/lint.yml/badge.svg?branch=main&label=Lint&logo=githubactions&style=flat-square" alt="Lint Status">
+    <img src="https://github.com/gsaffouri/eks-deployment/actions/workflows/lint.yml/badge.svg?branch=main&label=Lint%20Terraform&logo=githubactions&style=flat-square" alt="Lint Terraform">
   </a>
   <a href="https://github.com/gsaffouri/eks-deployment/actions/workflows/deploy.yml">
-    <img src="https://github.com/gsaffouri/eks-deployment/actions/workflows/deploy.yml/badge.svg?branch=main&label=Deploy&logo=githubactions&style=flat-square" alt="Deploy Status">
+    <img src="https://github.com/gsaffouri/eks-deployment/actions/workflows/deploy.yml/badge.svg?branch=main&label=Deploy%20Status&logo=githubactions&style=flat-square" alt="Deploy Status">
   </a>
   <img src="https://img.shields.io/badge/Terraform-1.5%2B-blueviolet?logo=terraform&style=flat-square" alt="Terraform Version">
   <img src="https://img.shields.io/badge/EKS%20Cluster-Managed-blue?logo=kubernetes&style=flat-square" alt="EKS Cluster">
