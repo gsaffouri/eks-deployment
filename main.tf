@@ -14,12 +14,13 @@ data "terraform_remote_state" "bootstrap" {
   backend = "s3"
   config = {
     bucket         = "my-tf-state-bucket-08040627"  # From aws-bootstrap
-    key            = "bootstrap/terraform.tfstate" # Must match aws-bootstrap state path
+    key            = "bootstrap/terraform.tfstate" # Path used in bootstrap
     region         = "us-east-1"
     dynamodb_table = "terraform-state-lock"
   }
 }
 
+# Deploy EKS cluster using existing VPC
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "~> 20.0"
@@ -27,7 +28,7 @@ module "eks" {
   cluster_name    = "my-eks-cluster"
   cluster_version = "1.29"
 
-  # Use VPC info from aws-bootstrap
+  # From aws-bootstrap outputs
   vpc_id     = data.terraform_remote_state.bootstrap.outputs.vpc_id
   subnet_ids = data.terraform_remote_state.bootstrap.outputs.private_subnets
 

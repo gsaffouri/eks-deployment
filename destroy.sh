@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "Deploying EKS cluster from eks-deployment..."
+echo "Destroying EKS cluster from eks-deployment..."
 
-# --- Auto-detect backend settings from aws-bootstrap ---
+# Auto-detect backend settings from aws-bootstrap
 BOOTSTRAP_DIR="../aws-bootstrap/resources/main.remote.tf"
 
 if [[ ! -f "$BOOTSTRAP_DIR" ]]; then
@@ -11,7 +11,6 @@ if [[ ! -f "$BOOTSTRAP_DIR" ]]; then
   exit 1
 fi
 
-# Extract values
 BUCKET=$(grep 'bucket *= *' "$BOOTSTRAP_DIR" | head -1 | awk -F\" '{print $2}')
 KEY=$(grep 'key *= *' "$BOOTSTRAP_DIR" | head -1 | awk -F\" '{print $2}')
 REGION=$(grep 'region *= *' "$BOOTSTRAP_DIR" | head -1 | awk -F\" '{print $2}')
@@ -24,7 +23,6 @@ echo "  Region: $REGION"
 echo "  DynamoDB: $DYNAMO"
 echo
 
-# 1. Initialize Terraform with detected backend
 terraform init \
   -backend-config="bucket=$BUCKET" \
   -backend-config="key=$KEY" \
@@ -32,16 +30,6 @@ terraform init \
   -backend-config="dynamodb_table=$DYNAMO" \
   -input=false
 
-# 2. Format check
-terraform fmt -check -recursive
+terraform destroy -auto-approve -input=false
 
-# 3. Validate syntax
-terraform validate
-
-# 4. Plan
-terraform plan -out=tfplan -input=false
-
-# 5. Apply
-terraform apply -input=false tfplan
-
-echo "EKS cluster deployed successfully!"
+echo "EKS cluster destroyed successfully!"
