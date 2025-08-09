@@ -1,12 +1,15 @@
 <p align="center">
-  <a href="https://github.com/gsaffouri/eks-deploy/actions">
-    <img src="https://github.com/gsaffouri/eks-deploy/actions/workflows/lint.yml/badge.svg?branch=main&label=CI%2FCD&logo=githubactions&style=flat-square" alt="CI/CD">
+  <a href="https://github.com/gsaffouri/eks-deployment/actions/workflows/lint.yml">
+    <img src="https://github.com/gsaffouri/eks-deployment/actions/workflows/lint.yml/badge.svg?branch=main&label=Lint&logo=githubactions&style=flat-square" alt="Lint Status">
+  </a>
+  <a href="https://github.com/gsaffouri/eks-deployment/actions/workflows/deploy.yml">
+    <img src="https://github.com/gsaffouri/eks-deployment/actions/workflows/deploy.yml/badge.svg?branch=main&label=Deploy&logo=githubactions&style=flat-square" alt="Deploy Status">
   </a>
   <img src="https://img.shields.io/badge/Terraform-1.5%2B-blueviolet?logo=terraform&style=flat-square" alt="Terraform Version">
   <img src="https://img.shields.io/badge/EKS%20Cluster-Managed-blue?logo=kubernetes&style=flat-square" alt="EKS Cluster">
   <img src="https://img.shields.io/badge/AWS%20Certified-%F0%9F%94%A5-orange?style=flat-square" alt="AWS Certified">
   <img src="https://img.shields.io/badge/Certified%20CKA-%F0%9F%8F%86-blue?style=flat-square" alt="CKA Certified">
-  <img src="https://img.shields.io/github/license/gsaffouri/eks-deploy?style=flat-square" alt="license">
+  <img src="https://img.shields.io/github/license/gsaffouri/eks-deployment?style=flat-square" alt="License">
   <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome">
 </p>
 
