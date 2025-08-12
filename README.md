@@ -52,6 +52,17 @@ Remote state from aws-bootstrap
 
 ---
 
+## ⚙️ Usage
+
+1. Clone this repo:
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/eks-deployment.git
+   cd eks-deploment/
+   ./deploy.sh -p
+
+
+---
+
 ## 🔮 To Do
  Add GitHub Actions for EKS deploy
 
