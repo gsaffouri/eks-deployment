@@ -11,10 +11,11 @@ if [[ ! -f "$BOOTSTRAP_DIR" ]]; then
   exit 1
 fi
 
-BUCKET=$(grep 'bucket *= *' "$BOOTSTRAP_DIR" | head -1 | awk -F\" '{print $2}')
-KEY=$(grep 'key *= *' "$BOOTSTRAP_DIR" | head -1 | awk -F\" '{print $2}')
-REGION=$(grep 'region *= *' "$BOOTSTRAP_DIR" | head -1 | awk -F\" '{print $2}')
-DYNAMO=$(grep 'dynamodb_table *= *' "$BOOTSTRAP_DIR" | head -1 | awk -F\" '{print $2}')
+# robust extraction (works with "value", 'value', or unquoted)
+BUCKET=$(sed -nE 's/.*bucket *= *["'\'']?([^"'\'' ]+)["'\'']?.*/\1/p' "$BOOTSTRAP_TF" | head -1)
+REGION=$(sed -nE 's/.*region *= *["'\'']?([^"'\'' ]+)["'\'']?.*/\1/p' "$BOOTSTRAP_TF" | head -1)
+DYNAMO=$(sed -nE 's/.*dynamodb_table *= *["'\'']?([^"'\'' ]+)["'\'']?.*/\1/p' "$BOOTSTRAP_TF" | head -1)
+
 
 echo "Backend settings loaded:"
 echo "  Bucket: $BUCKET"
