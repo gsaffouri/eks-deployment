@@ -58,9 +58,8 @@ Remote state from aws-bootstrap
    ```bash
    git clone https://github.com/YOUR_USERNAME/eks-deployment.git
    cd eks-deploment/
+   # Ensure aws-bootstrap has ran successfully!
    ./deploy.sh -p
-
-
 ---
 
 ## 🔮 To Do
