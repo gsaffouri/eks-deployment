@@ -3,24 +3,21 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 6.0"
+      version = "~> 4.67"
     }
   }
 }
 
-provider "aws" {
-  region = "us-east-1"
-}
+provider "aws" { region = "us-east-1" }
 
 locals {
   name            = "gorilla-eks"
   cluster_version = "1.29"
 }
 
-# Network lives here (not in bootstrap)
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "~> 6.0"
+  version = "~> 4.0"   # ✅ compatible with aws provider 4.x
 
   name = "${local.name}-vpc"
   cidr = "10.0.0.0/16"
@@ -35,17 +32,15 @@ module "vpc" {
   enable_dns_support   = true
 }
 
-# EKS cluster w/ one managed node group
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "~> 19.21"
+  version = "~> 19.21"  # ✅ works with aws provider 4.x
 
   cluster_name    = local.name
   cluster_version = local.cluster_version
 
   vpc_id     = module.vpc.vpc_id
   subnet_ids = module.vpc.private_subnets
-
   enable_irsa = true
 
   eks_managed_node_groups = {
