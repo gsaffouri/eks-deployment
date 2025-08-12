@@ -9,7 +9,6 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BOOTSTRAP_DIR="${BOOTSTRAP_DIR:-$ROOT/../aws-bootstrap}"
 STATE_KEY="${EKS_STATE_KEY:-eks-deployment/terraform.tfstate}"
 
-# Require stub backend so -backend-config works
 [[ -f "$ROOT/backend.tf" ]] || { echo 'ERROR: backend.tf missing (terraform { backend "s3" {} })'; exit 1; }
 [[ -d "$BOOTSTRAP_DIR" ]] || { echo "ERROR: bootstrap repo not found at $BOOTSTRAP_DIR"; exit 1; }
 
