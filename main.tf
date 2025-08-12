@@ -1,7 +1,10 @@
 terraform {
   required_version = ">= 1.5.0, < 2.0.0"
   required_providers {
-    aws = { source = "hashicorp/aws", version = "~> 6.0" }
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 6.0"
+    }
   }
 }
 
@@ -14,10 +17,10 @@ locals {
   cluster_version = "1.29"
 }
 
-# --- Network (patterned after your friend) ---
+# Network lives here (not in bootstrap)
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "~> 4.0"
+  version = "~> 6.0"
 
   name = "${local.name}-vpc"
   cidr = "10.0.0.0/16"
@@ -30,14 +33,12 @@ module "vpc" {
   single_nat_gateway   = true
   enable_dns_hostnames = true
   enable_dns_support   = true
-
-  tags = { Project = local.name }
 }
 
-# --- EKS ---
+# EKS cluster w/ one managed node group
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "~> 19.17" # matches your friend's stable line
+  version = "~> 19.21"
 
   cluster_name    = local.name
   cluster_version = local.cluster_version
@@ -56,6 +57,4 @@ module "eks" {
       disk_size      = 50
     }
   }
-
-  tags = { Project = local.name }
 }
