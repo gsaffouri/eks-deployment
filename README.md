@@ -81,7 +81,7 @@ Pull requests are welcome. Fork it. Work it. PR it. Repeat.
 ---
 
 ## 🧠 Credits
-Built by GSaffouri_X 🦍, powered by coffee and cloud infrastructure!
+Built by [gsaffouri](https://github.com/gsaffouri)  🦍, powered by coffee and cloud infrastructure!
 
 ---
 
