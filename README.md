@@ -46,6 +46,8 @@ It pulls core networking resources (VPC, subnets, remote state config) from the 
 ## 📦 Dependencies
 Terraform >= 1.3.0
 
+AWS CLI v2 Installed/Configured
+
 AWS CLI authenticated with correct IAM role
 
 Remote state from aws-bootstrap
@@ -54,7 +56,7 @@ Remote state from aws-bootstrap
 
 ## ⚙️ Usage
 
-1. Clone this repo:
+1. Fork this repo:
    ```bash
    git clone https://github.com/YOUR_USERNAME/eks-deployment.git
    cd eks-deploment/
